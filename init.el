@@ -1,0 +1,138 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
+  (when (>= emacs-major-version 24)
+    (require 'package)
+    (package-initialize)
+    (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+    )
+  (require 'cl)
+
+  ;;add whatever packages you want here
+  (defvar b1u33ky/packages '(
+			     company
+			     solarized-theme
+			     monokai-theme
+			     hungry-delete
+			     smex
+			     swiper
+                             counsel
+			     smartparens
+			     
+			     )  "Default packages")
+
+(setq package-selected-packages b1u33ky/packages)
+
+ 
+  (defun b1u33ky/packages-installed-p ()
+    (loop for pkg in b1u33ky/packages
+          when (not (package-installed-p pkg)) do (return nil)
+          finally (return t)))
+
+  (unless (b1u33ky/packages-installed-p)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents)
+    (dolist (pkg b1u33ky/packages)
+      (when (not (package-installed-p pkg))
+        (package-install pkg))))
+
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(electric-indent-mode t)
+(global-linum-mode t)
+;-turn off tool-bar
+;-turn off scroll-bar
+;-show linum-mode
+;-turn off electric-indent-mode
+
+(setq inhibit-splash-screen t)
+;-turn off splash screen
+
+;-save your config
+;define a function to quickly open your config file
+(defun open-my-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
+(global-set-key (kbd "<f2>") 'open-my-init-file)
+
+(global-company-mode t)
+(setq-default cursor-type 'bar)
+
+(setq make-backup-files nil)
+;; disable backup files
+
+(require 'org)
+(setq org-src-fontify-natively t)
+
+(require 'recentf)
+(recentf-mode t)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+(delete-selection-mode t)
+
+;; open emacs with full-screen
+(setq  initial-frame-alist (quote ((fullscreen . maximized))))
+
+;; show match parents
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+;; highlight current line
+(global-hl-line-mode t)
+
+;; load theme "(load-theme 'solarized-light t)"
+(load-theme 'solarized-light t)
+
+;; enable hungry-delete
+(require 'hungry-delete)
+(global-hungry-delete-mode)
+
+;; configure smex
+(require 'smex) ;; Not needed if you use package.el
+  (smex-initialize) ;; Can be omitted. This might cause a (minimal) delay
+                    ;; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+
+;; configure swiper
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-h f") 'counsel-describe-function)
+(global-set-key (kbd "C-h v") 'counsel-describe-variable)
+
+;; Always start smartparens mode in emacs-lisp-mode.
+(require 'smartparens-config)
+ ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+(smartparens-global-mode t)
+
+;; enhance find-function find-variable find-function-on-keys
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-idle-delay 0.1)
+ '(company-minimum-prefix-length 1)
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "f78de13274781fbb6b01afd43327a4535438ebaeec91d93ebdbba1e3fba34d3c" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
