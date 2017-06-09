@@ -33,7 +33,7 @@
         (package-install pkg))))
 
 ;; Always start smartparens mode in emacs-lisp-mode.
-(require 'smartparens-config)
+;; (require 'smartparens-config)
  ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 

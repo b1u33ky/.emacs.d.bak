@@ -17,10 +17,11 @@
 			     solarized-theme
 			     monokai-theme
 			     hungry-delete
-			     smex
 			     swiper
-                 counsel
+                             counsel
 			     smartparens
+			     popwin
+			     
 			     )  "Default packages")
 
 (setq package-selected-packages b1u33ky/packages)
@@ -62,6 +63,7 @@
 (setq-default cursor-type 'bar)
 
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 ;; disable backup files
 
 (require 'org)
@@ -107,6 +109,20 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
+
+;; Always start smartparens mode in emacs-lisp-mode.
+(require 'smartparens-config)
+ ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+(smartparens-global-mode t)
+
+;; enhance find-function find-variable find-function-on-keys
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key)
+
+;; org configurations
+(setq org-agenda-files '("~/org"))
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
