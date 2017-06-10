@@ -18,4 +18,10 @@
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 
+;; counsel-git shortcut
+(global-set-key (kbd "C-c p f") 'counsel-git)
+
+;; type "C-M-\\" to indent-region-or-buffer
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
 (provide 'init-keybindings)

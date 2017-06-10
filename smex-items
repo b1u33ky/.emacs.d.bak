@@ -1,16 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ load-theme
+ info
+ counsel-git
  cd
  5x5
  arp
  dbx
- dig
- erc
- ert
 )
 
 ;; ----- smex-data -----
 (
- 
+ (counsel-git . 1)
+ (info . 1)
+ (load-theme . 4)
 )

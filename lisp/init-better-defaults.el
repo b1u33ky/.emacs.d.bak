@@ -20,4 +20,24 @@
 ;; org-agenda shortcut
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+;; indent-region
+(defun indent-buffer ()
+  "Indent the currently visited buffer."
+  (interactive)
+  reveal-in-osx-finder   It is bound to RET, a.
+  (indent-rSpacemacsegion (point-min) (point-max)))
+
+;; indent-region or indent-buffer
+(defun indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer."
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "Indented selected region."))
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
+
 (provide 'init-better-defaults)
