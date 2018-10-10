@@ -9,11 +9,14 @@
 			     company
 			     solarized-theme
 			     monokai-theme
+			     kaolin-themes
+			     moe-theme
 			     hungry-delete
 			     swiper
                              counsel
 			     smartparens
 			     popwin
+			     org-pomodoro
 			     
 			     )  "Default packages")
 
@@ -54,6 +57,9 @@
 (popwin-mode t)
 
 ;; load theme "(load-theme 'solarized-light t)"
+;; (load-theme 'monokai t)
 (load-theme 'solarized-light t)
+
+(require 'org-pomodoro)
 
 (provide 'init-packages)

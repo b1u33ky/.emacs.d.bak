@@ -17,6 +17,9 @@
 ;; enable delete-selection-mode
 (delete-selection-mode t)
 
+;; set "UTF-8" as default language environment
+(set-language-environment "UTF-8")
+
 ;; org-agenda shortcut
 (global-set-key (kbd "C-c a") 'org-agenda)
 
@@ -39,5 +42,23 @@
       (progn
 	(indent-buffer)
 	(message "Indented buffer.")))))
+
+;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling    
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;; hippie expand is dabbrev expand on steroids
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+                                         try-expand-dabbrev-all-buffers
+                                         try-expand-dabbrev-from-kill
+                                         try-complete-file-name-partially
+                                         try-complete-file-name
+                                         try-expand-all-abbrevs
+                                         try-expand-list
+                                         try-expand-line
+                                         try-complete-lisp-symbol-partially
+                                         try-complete-lisp-symbol))
 
 (provide 'init-better-defaults)

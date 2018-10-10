@@ -22,4 +22,11 @@
 ;; set cursor-type as "bar"
 (setq-default cursor-type 'bar)
 
+;; set fontsize
+;;(set-frame-font "DejaVu Sans Mono for Powerline-14")
+;;(set-frame-font "Droid Sans Mono Slashed for Powerline-14")
+;;(set-frame-font "Source Code Pro for Powerline-14")
+;;(set-frame-font "Menlo-14")
+(set-frame-font "Consolas-16")
+
 (provide 'init-ui)

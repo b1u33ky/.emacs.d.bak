@@ -1,18 +1,59 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- info
- counsel-git
- cd
- 5x5
- arp
- dbx
+ find-file
+ save-buffer
+ find-tag
+ xref-find-definitions
+ describe-function
+ mark-whole-buffer
+ emacs-uptime
 )
 
 ;; ----- smex-data -----
 (
- (counsel-git . 1)
- (info . 1)
- (load-theme . 4)
+ (counsel-git . 4)
+ (info . 67)
+ (load-theme . 87)
+ (indent-region . 3)
+ (eval-buffer . 3)
+ (indent-buffer . 3)
+ (double-the-argumentsnumber . 2)
+ (xref-find-definitions . 5)
+ (beginning-of-buffer . 1)
+ (package-list-packages . 1)
+ (org-capture . 2)
+ (customize-group . 1)
+ (org-pomodoro . 28)
+ (font-show-log . 2)
+ (find-file . 11)
+ (text-scale-set . 2)
+ (describe-font . 1)
+ (erc-select . 10)
+ (set-default-font . 2)
+ (customize . 1)
+ (save-buffer . 2)
+ (recentf-open-files . 3)
+ (set-frame-font . 5)
+ (other-window . 1)
+ (scroll-down . 1)
+ (multiple-by-seven . 6)
+ (zap-to-char . 1)
+ (point-to-register . 1)
+ (set-mark-command . 15)
+ (describe-function . 2)
+ (doc-view-mode . 1)
+ (simplified-beginning-of-buffer . 3)
+ (replace-regexp . 2)
+ (simp-mark-whole-buffer . 8)
+ (goto-char . 2)
+ (kill-buffer . 1)
+ (append-to-buffer . 1)
+ (swiper . 3)
+ (what-line . 1)
+ (which-func-mode . 1)
+ (which-function-mode . 2)
+ (emacs-uptime . 2)
+ (mark-whole-buffer . 1)
+ (find-tag . 1)
 )

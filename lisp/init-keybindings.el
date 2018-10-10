@@ -24,4 +24,14 @@
 ;; type "C-M-\\" to indent-region-or-buffer
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
+;;  another way to complete things in Emacs
+(global-set-key (kbd "s-/") 'hippie-)
+
+;; command key as meta keybinding
+(when (eq system-type 'darwin)
+ (setq mac-option-key-is-meta nil)
+ (setq mac-command-key-is-meta t)
+ (setq mac-command-modifier 'meta)
+ (setq mac-option-modifier nil))
+
 (provide 'init-keybindings)
