@@ -1,37 +1,37 @@
 
 ;; ----- smex-history -----
 (
- find-file
- save-buffer
- find-tag
- xref-find-definitions
- describe-function
- mark-whole-buffer
- emacs-uptime
+ term
+ yas-insert-snippet
+ eval-buffer
+ package-list-packages
+ evil-surround-mode
+ evil-normal-state
+ evil-emacs-state
 )
 
 ;; ----- smex-data -----
 (
- (counsel-git . 4)
+ (counsel-git . 5)
  (info . 67)
- (load-theme . 87)
+ (load-theme . 88)
  (indent-region . 3)
- (eval-buffer . 3)
+ (eval-buffer . 17)
  (indent-buffer . 3)
  (double-the-argumentsnumber . 2)
  (xref-find-definitions . 5)
  (beginning-of-buffer . 1)
- (package-list-packages . 1)
+ (package-list-packages . 10)
  (org-capture . 2)
- (customize-group . 1)
+ (customize-group . 6)
  (org-pomodoro . 28)
  (font-show-log . 2)
- (find-file . 11)
+ (find-file . 31)
  (text-scale-set . 2)
  (describe-font . 1)
  (erc-select . 10)
  (set-default-font . 2)
- (customize . 1)
+ (customize . 2)
  (save-buffer . 2)
  (recentf-open-files . 3)
  (set-frame-font . 5)
@@ -40,13 +40,13 @@
  (multiple-by-seven . 6)
  (zap-to-char . 1)
  (point-to-register . 1)
- (set-mark-command . 15)
+ (set-mark-command . 16)
  (describe-function . 2)
  (doc-view-mode . 1)
  (simplified-beginning-of-buffer . 3)
  (replace-regexp . 2)
  (simp-mark-whole-buffer . 8)
- (goto-char . 2)
+ (goto-char . 3)
  (kill-buffer . 1)
  (append-to-buffer . 1)
  (swiper . 3)
@@ -56,4 +56,27 @@
  (emacs-uptime . 2)
  (mark-whole-buffer . 1)
  (find-tag . 1)
+ (counsel-imenu . 1)
+ (counsel-ag . 5)
+ (term . 2)
+ (mkdir . 1)
+ (helm-do-ag . 12)
+ (occur-edit-mode . 1)
+ (occur . 4)
+ (linum-mode . 1)
+ (goto-line . 11)
+ (lisp-interaction-mode . 2)
+ (iedit-mode . 2)
+ (er/expand-region . 1)
+ (flymake-mode . 2)
+ (flycheck-mode . 4)
+ (describe-mode . 1)
+ (flycheck-list-errors . 1)
+ (flycheck-describe-checker . 1)
+ (flycheck-verify-setup . 3)
+ (js2-mode . 1)
+ (evil-emacs-state . 10)
+ (evil-normal-state . 7)
+ (evil-surround-mode . 1)
+ (yas-insert-snippet . 2)
 )

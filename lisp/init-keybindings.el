@@ -18,6 +18,9 @@
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 
+;; org-agenda shorcut
+(global-set-key (kbd "C-c a") 'org-agenda)
+
 ;; counsel-git shortcut
 (global-set-key (kbd "C-c p f") 'counsel-git)
 
@@ -25,7 +28,27 @@
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
 ;;  another way to complete things in Emacs
-(global-set-key (kbd "s-/") 'hippie-)
+(global-set-key (kbd "s-/") 'hippie-expand)
+
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+;; r aka remember
+(global-set-key (kbd "C-c r") 'org-capture)
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+(global-set-key (kbd "M-s e") 'iedit-mode)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
+
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+;; remap C-n as next item when company mode is enable
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 ;; command key as meta keybinding
 (when (eq system-type 'darwin)
